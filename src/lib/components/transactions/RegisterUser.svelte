@@ -1,21 +1,27 @@
 <script lang="ts">
-import { stringUtf8CV } from 'micro-stacks/clarity';
+import { noneCV, someCV, bufferCV } from 'micro-stacks/clarity';
 import { PostConditionMode } from 'micro-stacks/transactions';
 import { getOpenContractCall } from '@micro-stacks/svelte';
 
 const contractCall = getOpenContractCall();
+export let transType:string;
 
-$: memo = 'new user';
+$: memo = undefined;
 
 const submit = async () => {
-	const functionArgs = [stringUtf8CV('new user')]
+	const contractAddress = import.meta.env.VITE_NYC_CORE.split('.')[0];
+	const contractName = import.meta.env.VITE_NYC_CORE.split('.')[1];
+	let memoArg:any = noneCV();
+	if (memo) {
+		memoArg = someCV(bufferCV(memo));
+	}
 	await $contractCall.openContractCall({
 		postConditions: [],
 		postConditionMode: PostConditionMode.Deny,
-		contractAddress: import.meta.env.VITE_MIA_CORE.split('.')[0],
-		contractName: import.meta.env.VITE_MIA_CORE.split('.')[1],
-		functionName: 'register-user',
-		functionArgs: functionArgs,
+		contractAddress: contractAddress,
+		contractName: contractName,
+		functionName: transType,
+		functionArgs: [memoArg],
 		onFinish: data => {
 			console.log(data);
 		},
@@ -29,15 +35,16 @@ const canRegister = true;
 </script>
 
 <section>
-    <div class="container my-5">
-		<div>
-			<div class="d-flex justify-content-center">
-				<input class="w-100 form-control" bind:value={memo} type="string" id="Contribution" aria-describedby="Contribution"/>
+	<h3>{transType}</h3>
+    <div>
+		<div class="mb-3">
+			<div class="">
+				<input class="w-100 form-control" placeholder="memo" bind:value={memo} type="string" aria-describedby="Contribution"/>
 			</div>
 		</div>
 		<div>
 			{#if canRegister}
-			<button class="btn outline-light mr-2 text-info" on:click={() => submit()}>Register User</button>
+			<button class="btn btn-info text-white" on:click={() => submit()}>Send</button>
 			{:else}
 			Unable to register
 			{/if}

@@ -1,27 +1,27 @@
-<script>
+<script lang="ts">
 // @ts-nocheck
 import Header from "$lib/header/Header.svelte";
-import { getAuth  } from "@micro-stacks/svelte";
+import { getAuth, getNetwork } from '@micro-stacks/svelte';
 import NetworkStatus from '../transactions/NetworkStatus.svelte';
 import MineMany from '../transactions/MineMany.svelte';
+import MineTokens from '../transactions/MineTokens.svelte';
 import RegisterUser from '../transactions/RegisterUser.svelte';
 import { getStacksBlockHeight, getTotalMempoolTx } from "$lib/stacks";
 import {onMount} from 'svelte'
+import poster from '$lib/assets/cityscape-1.jpeg';
 
 const auth = getAuth();
-// medium 
-const poster = 'https://images.prismic.io/edao/940fb69d-caf5-496c-9466-0901ecd41eda_nighttime.jpg?auto=compress,format';
-export let homepage;
+const network = import.meta.env.VITE_NETWORK; //getNetwork();
 
-// Pause and play the video, and change the button text
+let assetId;
+let version;
 let transType;
-const openTx = (txType) => {
-	transType = txType;
-}
+
 const scrollTo = () => {
   const getMeTo = document.getElementById("footer-section");
   if (getMeTo) getMeTo.scrollIntoView({behavior: 'smooth'});
 }
+
 let mempoolTxCount = 0; 
 let stacksBlockHeight = 0; 
 onMount(async () => {
@@ -32,45 +32,57 @@ onMount(async () => {
 </script>
   
 <section id="section1" style="">
-  <Header {homepage}/>
-  <img height="1000px" src={poster} alt="night time"/>
-  <!-- Optional: some overlay text to describe the video 
-  <video muted loop id="myVideo">
-    <source src={poster} type="video/mp4">
-  </video>
-  -->
-
+  <img src={poster} alt="night time" style="min-height: 100%; min-width: 100%; object-fit: cover;"/>
   <div class="content">
     <h1>
-      City Coins.
+      City Coins Test Application
     </h1>
-    <p>City Coins Migration Test Application.</p>
     {#if $auth.isSignedIn}
-      <div>
-        <p>Transactions..</p>
-        <p>mempoolTxCount = {mempoolTxCount}</p>
-        <p>stacksBlockHeight = {stacksBlockHeight}</p>
-        <ul>
-          <li>
-            <a href="/" class="pointer" style="vertical-align: middle;" on:click|preventDefault={() => openTx('get-network-status')}><span>get-network-status</span></a>    
-          </li>
-          <li>
-            <a href="/" class="pointer" style="vertical-align: middle;" on:click|preventDefault={() => openTx('mine-many')}><span>mine-many</span></a>    
-          </li>
-          <li>
-            <a href="/" class="pointer" style="vertical-align: middle;" on:click|preventDefault={() => openTx('register-user')}><span>register-user</span></a>    
-          </li>
-        </ul>
+    <div class="row g-1 mb-3 bg-light text-dark py-2 px-2">
+      <div class="col-2">{network} </div>
+      <div class="col-2">Mem Pool: {mempoolTxCount}</div>
+      <div class="col-2">Block Height: {stacksBlockHeight} </div>
+      <div class="col-6"></div>
+    </div>
+    <div class="row g-1 mb-3">
+      <div class="col-2">
+        <select class="form-select" aria-label="Default select example" bind:value={version}>
+          <option value="">Select Version</option>
+          <option value="v2">V2</option>
+        </select>
       </div>
+      <div class="col-2">
+        <select class="form-select" aria-label="Default select example" bind:value={assetId}>
+          <option value="">Select City</option>
+          <option value="nyc">{import.meta.env.VITE_NYC_CORE.split('.')[1]}</option>
+          <option value="mia">{import.meta.env.VITE_MIA_CORE.split('.')[1]}</option>
+        </select>
+      </div>
+      {#if assetId}
+      <div class="col-2">
+        <select class="form-select" aria-label="Default select example" bind:value={transType}>
+          <option value="">Select Transaction</option>
+          <option value="register-user">register-user</option>
+          <option value="mine-tokens">mine-tokens</option>
+          <option value="mine-many">mine-many</option>
+        </select>
+      </div>
+      {/if}
+    </div>
       {#if transType}
-      <p>Transaction : {transType}</p>
-        {#if transType === 'get-network-status'}
-        <NetworkStatus />
-        {:else if transType === 'mine-many'}
-        <MineMany />
-        {:else if transType === 'register-user'}
-        <RegisterUser />
-        {/if}
+      <div class="row g-1 my-4 bg-light text-dark py-2 px-2">
+        <div class="col-12">
+          {#if transType === 'get-network-status'}
+          <NetworkStatus />
+          {:else if transType === 'mine-tokens'}
+          <MineTokens {transType}/>
+          {:else if transType === 'mine-many'}
+          <MineMany {transType}/>
+          {:else if transType === 'register-user'}
+          <RegisterUser {transType}/>
+          {/if}
+        </div>
+      </div>
       {/if}
     {:else}
       <span class="nav-item"><a href="/" class="pointer px-2">Connect Wallet</span>
@@ -90,13 +102,13 @@ section {
   font-family: Gilroy-ExtraBold;
   min-width: 100vw;
   max-width: 100vw;
-  min-height: 100vh;
+  min-height: 90vh;
   border: 0pt solid rgb(35, 183, 37);
 }
 .section-footer {
   position: absolute;
   height: auto;
-  bottom: 0;
+  bottom: 500px;
   background: rgb(118, 112, 112, 0);
   color: #f1f1f1;
   width: 100%;
@@ -117,8 +129,8 @@ section {
 */
 .content {
   position: absolute;
-  top: 30%;
-  padding-left: 5vw;
+  top: 7%;
+  padding: 0 5vw;
   color: #fff;
   width: 100%;
   height: auto;
@@ -126,7 +138,7 @@ section {
 
 .content h1 {
   color: #fff;
-  font-size: 4.5rem;
+  font-size: 2.5rem;
   letter-spacing: 0.1rem;
   line-height: 4.0rem;
   text-shadow: 5px 5px 30px rgb(40, 39, 36);
@@ -141,7 +153,7 @@ section {
 }
 @media screen and (min-width: 0px) and (max-width: 940px) {
   .content { 
-    top: 20%;
+    top: 0%;
   }
   .content h1 { 
     font-size: 4.0rem; 

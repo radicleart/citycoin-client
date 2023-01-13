@@ -58,23 +58,9 @@ onMount(async () => {
 })
 </script>
 
-<Notifications>
-{#if !homepage}
-  <Header {homepage}/>
-  {#if four01}
-    Not Found
-  {/if}
-  {#if appInitialized}
-  <main id="main" class="bg-grey my-5" style="min-height: 70vh; background-size: contain;">
-    <slot />
-  </main>
-  {/if}
-  <Footer />
-{:else}
-  <Homepage {homepage}/>
-  <Footer />
-{/if}
-</Notifications>
+<Header {homepage}/>
+<Homepage {homepage}/>
+<Footer />
 
 <style>
 main {
