@@ -11,18 +11,6 @@
     "file": "internal/immutable/assets/cityscape-1-e40e85a0.jpeg",
     "src": "src/lib/assets/cityscape-1.jpeg"
   },
-  "src/lib/assets/png-assets/stx_eco_discord.png": {
-    "file": "internal/immutable/assets/stx_eco_discord-5cc61295.png",
-    "src": "src/lib/assets/png-assets/stx_eco_discord.png"
-  },
-  "src/lib/assets/png-assets/stx_eco_github.png": {
-    "file": "internal/immutable/assets/stx_eco_github-0e15c254.png",
-    "src": "src/lib/assets/png-assets/stx_eco_github.png"
-  },
-  "src/lib/assets/png-assets/stx_eco_twitter.png": {
-    "file": "internal/immutable/assets/stx_eco_twitter-b58c754c.png",
-    "src": "src/lib/assets/png-assets/stx_eco_twitter.png"
-  },
   "src/lib/assets/png-assets/stx_eco_wallet_on.png": {
     "file": "internal/immutable/assets/stx_eco_wallet_on-090e5a93.png",
     "src": "src/lib/assets/png-assets/stx_eco_wallet_on.png"
@@ -31,25 +19,37 @@
     "file": "internal/immutable/assets/stx_eco_wallet_off-7e8f173f.png",
     "src": "src/lib/assets/png-assets/stx_eco_wallet_off.png"
   },
-  "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-ext-400-normal.woff2": {
-    "file": "internal/immutable/assets/fira-mono-cyrillic-ext-400-normal-3df7909e.woff2",
-    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-ext-400-normal.woff2"
+  "src/lib/assets/png-assets/stx_eco_discord.png": {
+    "file": "internal/immutable/assets/stx_eco_discord-5cc61295.png",
+    "src": "src/lib/assets/png-assets/stx_eco_discord.png"
   },
-  "node_modules/@fontsource/fira-mono/files/fira-mono-greek-ext-400-normal.woff2": {
-    "file": "internal/immutable/assets/fira-mono-greek-ext-400-normal-9e2fe623.woff2",
-    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-greek-ext-400-normal.woff2"
+  "src/lib/assets/png-assets/stx_eco_twitter.png": {
+    "file": "internal/immutable/assets/stx_eco_twitter-b58c754c.png",
+    "src": "src/lib/assets/png-assets/stx_eco_twitter.png"
+  },
+  "src/lib/assets/png-assets/stx_eco_github.png": {
+    "file": "internal/immutable/assets/stx_eco_github-0e15c254.png",
+    "src": "src/lib/assets/png-assets/stx_eco_github.png"
   },
   "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-400-normal.woff2": {
     "file": "internal/immutable/assets/fira-mono-cyrillic-400-normal-c7d433fd.woff2",
     "src": "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-400-normal.woff2"
   },
-  "node_modules/@fontsource/fira-mono/files/fira-mono-latin-ext-400-normal.woff2": {
-    "file": "internal/immutable/assets/fira-mono-latin-ext-400-normal-6bfabd30.woff2",
-    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-latin-ext-400-normal.woff2"
+  "node_modules/@fontsource/fira-mono/files/fira-mono-greek-ext-400-normal.woff2": {
+    "file": "internal/immutable/assets/fira-mono-greek-ext-400-normal-9e2fe623.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-greek-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-ext-400-normal.woff2": {
+    "file": "internal/immutable/assets/fira-mono-cyrillic-ext-400-normal-3df7909e.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-ext-400-normal.woff2"
   },
   "node_modules/@fontsource/fira-mono/files/fira-mono-greek-400-normal.woff2": {
     "file": "internal/immutable/assets/fira-mono-greek-400-normal-a8be01ce.woff2",
     "src": "node_modules/@fontsource/fira-mono/files/fira-mono-greek-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-latin-ext-400-normal.woff2": {
+    "file": "internal/immutable/assets/fira-mono-latin-ext-400-normal-6bfabd30.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-latin-ext-400-normal.woff2"
   },
   "node_modules/@fontsource/fira-mono/files/fira-mono-latin-400-normal.woff2": {
     "file": "internal/immutable/assets/fira-mono-latin-400-normal-e43b3538.woff2",
@@ -60,7 +60,7 @@
     "src": "node_modules/@fontsource/fira-mono/files/fira-mono-all-400-normal.woff"
   },
   ".svelte-kit/runtime/client/start.js": {
-    "file": "internal/immutable/start-2e4db640.js",
+    "file": "internal/immutable/start-c6a0c0ca.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -76,14 +76,14 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "internal/immutable/pages/__layout.svelte-8a31e646.js",
+    "file": "internal/immutable/pages/__layout.svelte-0fdb3337.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_preload-helper-f2f10a53.js",
       "_index-81fcc74e.js",
-      "_Section1-d6c67ebf.js",
+      "_Section1-3b13ce7c.js",
       "_stores-b3c97d2b.js",
       "_index-0f02ce5e.js"
     ],
@@ -129,13 +129,13 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "internal/immutable/pages/index.svelte-7c6bf5c9.js",
+    "file": "internal/immutable/pages/index.svelte-890a68d5.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-81fcc74e.js",
-      "_Section1-d6c67ebf.js",
+      "_Section1-3b13ce7c.js",
       "_index-0f02ce5e.js"
     ]
   },
@@ -157,8 +157,8 @@
       "_index-81fcc74e.js"
     ]
   },
-  "_Section1-d6c67ebf.js": {
-    "file": "internal/immutable/chunks/Section1-d6c67ebf.js",
+  "_Section1-3b13ce7c.js": {
+    "file": "internal/immutable/chunks/Section1-3b13ce7c.js",
     "imports": [
       "_index-81fcc74e.js",
       "_index-0f02ce5e.js"
