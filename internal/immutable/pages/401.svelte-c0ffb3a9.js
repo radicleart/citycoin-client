@@ -1,0 +1,5 @@
+import{S as _,i as m,d as u,s as h,m as f,w as p,L as v,n as y,l,x as $,q as i,u as g,M as w,g as x,H as r,v as b}from"../chunks/index-669fa34a.js";const q="src/routes/401.svelte";function d(o){let e,n;const c={c:function(){e=f("meta"),n=p(`
+
+Not Found`),this.h()},l:function(t){const a=v('[data-svelte="svelte-1ds1qyu"]',document.head);e=y(a,"META",{name:!0,content:!0,class:!0}),a.forEach(l),n=$(t,`
+
+Not Found`),this.h()},h:function(){document.title="About",i(e,"name","description"),i(e,"content","About this app"),i(e,"class","s-uaHyo2I-InkF"),g(e,q,5,1,80)},m:function(t,a){w(document.head,e),x(t,n,a)},p:r,i:r,o:r,d:function(t){l(e),t&&l(n)}};return u("SvelteRegisterBlock",{block:c,id:d.name,type:"component",source:"",ctx:o}),c}function S(o,e){let{$$slots:n={},$$scope:c}=e;b("_401",n,[]);const s=[];return Object.keys(e).forEach(t=>{!~s.indexOf(t)&&t.slice(0,2)!=="$$"&&t!=="slot"&&console.warn(`<_401> was created with unknown prop '${t}'`)}),[]}class E extends _{constructor(e){super(e),m(this,e,S,d,h,{}),u("SvelteRegisterComponent",{component:this,tagName:"_401",options:e,id:d.name})}}export{E as default};
