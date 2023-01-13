@@ -86,7 +86,7 @@ onMount(async () => {
       </div>
       {/if}
     {:else}
-      <span class="nav-item"><a href="/" class="pointer px-2">Connect Wallet</span>
+      <span class="nav-item">Connect Wallet</span>
     {/if}
   </div>
   <div class="section-footer">

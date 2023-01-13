@@ -35,7 +35,7 @@ const login = () => {
 	}
 }
 onMount(async () => {
-	webWalletNeeded = typeof window.StacksProvider === 'undefined';
+	//webWalletNeeded = typeof window.StacksProvider === 'undefined';
 })
 
 </script>
