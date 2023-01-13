@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev --port=8080",
-    "build": "vite build --mode production",
+    "build": "vite build --mode staging",
     "build-prod": "vite build --mode production",
     "build-stag": "vite build --mode staging",
     "package": "svelte-kit package",
