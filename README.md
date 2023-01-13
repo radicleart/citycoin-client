@@ -16,7 +16,7 @@ npm run dev -- --open
 
 Will spin up the application pointing to http://localhost:8080
 
-## Target Environment
+## Environments
 
 The application environment can be altered locally by overriding .env with .env.local.
 For example copying the contents of .env.staging to .env.local will cause the localhost:8080
@@ -34,30 +34,23 @@ Or equivalently for mainnet run;
 npm run build-prod
 ```
 
-## Devnet Wallet
+Note you can preview the production build locally with `npm run preview`.
 
-To set up a devnet environment;
+In the devnet environment on localhost fulfil these additional steps;
 
 1. Clone the citycoins/protocol repo
 2. run `Clarinet integrate`
 3. Load the seed phrase from wallet_1 in citycoins/protocol/settings/Devnet.toml into web wallet.
 
-### Deployment
+## Deployment
 
-First build the application;
-
-```bash
-npm run build
-```
-
-Note you can preview the production build locally with `npm run preview`.
-
-#### Github Pages
+### Github Pages
 
 Requires access to github settings and for a branch `gh-pages` to be created from `main`.
 Then run;
 
 ```bash
+npm run build
 node ./gh-pages.js
 ```
 
