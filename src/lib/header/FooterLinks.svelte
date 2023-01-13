@@ -1,4 +1,7 @@
 <script lang="ts">
+import stx_eco_discord from '$lib/assets/png-assets/stx_eco_discord.png';
+import stx_eco_twitter from '$lib/assets/png-assets/stx_eco_twitter.png';
+import stx_eco_github from '$lib/assets/png-assets/stx_eco_github.png';
 let webWalletLink = 'https://www.hiro.so/wallet/install-web'
 let stacksOrg = 'https://stacks.org'
 </script>
@@ -67,10 +70,10 @@ let stacksOrg = 'https://stacks.org'
   <div class="col-md-2 col-sm-12 ">
     <div class="text-center">
       <div class="mb-0">
-        <a class="mx-0" href="https://discord.com/channels/621759717756370964/971037457661444156" target="_blank"><img src="/img/png-assets/stx_eco_discord.png" alt="discord ecosystem dao logo" width="39" height="auto"/></a>
-        <a class="mx-0" href="https://mobile.twitter.com/radicleart" target="_blank"><img src="/img/png-assets/stx_eco_twitter.png" alt="twitter ecosystem dao logo" width="39" height="auto"/></a>
+        <a class="mx-0" href="https://discord.com/channels/621759717756370964/971037457661444156" target="_blank"><img src={stx_eco_discord} alt="discord ecosystem dao logo" width="39" height="auto"/></a>
+        <a class="mx-0" href="https://mobile.twitter.com/radicleart" target="_blank"><img src={stx_eco_twitter} alt="twitter ecosystem dao logo" width="39" height="auto"/></a>
       </div>
-      <div style="position: relative; left: 2px;"><a class="" href="https://github.com/Clarity-Innovation-Lab/ecosystem-dao" target="_blank"><img src="/img/png-assets/stx_eco_github.png" alt="github ecosystem dao logo" width="39" height="auto"/></a></div>
+      <div style="position: relative; left: 2px;"><a class="" href="https://github.com/Clarity-Innovation-Lab/ecosystem-dao" target="_blank"><img src={stx_eco_github} alt="github ecosystem dao logo" width="39" height="auto"/></a></div>
     </div>
   </div>
 

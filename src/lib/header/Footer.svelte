@@ -1,5 +1,6 @@
 <script lang="ts">
 import FooterLinks from './FooterLinks.svelte'
+import logoWhite from '$lib/assets/logo-white.jpeg';
 </script>
   
 <div class="container-fluid footer" id="footer-section"> 
@@ -8,7 +9,7 @@ import FooterLinks from './FooterLinks.svelte'
         <div class="px-0 col-4">
           <div class="">
             <a class="navbar-brand" href="/">
-              <img src="/img/logo-white.jpeg" alt="stacks ecosystem dao logo" width="198" height="auto"/>
+              <img src={logoWhite} alt="stacks ecosystem dao logo" width="198" height="auto"/>
             </a>
           </div>
         </div>

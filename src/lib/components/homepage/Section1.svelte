@@ -9,6 +9,7 @@ import RegisterUser from '../transactions/RegisterUser.svelte';
 import { getStacksBlockHeight, getTotalMempoolTx } from "$lib/stacks";
 import {onMount} from 'svelte'
 import poster from '$lib/assets/cityscape-1.jpeg';
+import arrow1 from '$lib/assets/png-assets/stx_eco_arrow_down.png';
 
 const auth = getAuth();
 const network = import.meta.env.VITE_NETWORK; //getNetwork();
@@ -91,7 +92,7 @@ onMount(async () => {
   <div class="section-footer">
     <div class="d-flex justify-content-between">
       <div></div>
-      <div><span class="pointer" on:click={scrollTo}><img src="/img/png-assets/stx_eco_arrow_down.png" alt="Scroll down" width="30" height="auto" /></span></div>
+      <div><span class="pointer" on:click={scrollTo}><img src={arrow1} alt="Scroll down" width="30" height="auto" /></span></div>
       <div></div>
     </div>
   </div>
