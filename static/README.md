@@ -93,3 +93,4 @@ The application can be packaged and uploaded to the npm registry;
 cd package
 npm publish
 ```
+

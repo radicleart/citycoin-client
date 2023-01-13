@@ -12,7 +12,8 @@ import { getAuth } from "@micro-stacks/svelte";
 import { mountClient, getMicroStacksClient } from "@micro-stacks/svelte";
 import { client } from "../stores/client";
 
-export const prerender = true;
+export const prerender = false;
+export const ssr = false;
 
 let origin = import.meta.env.VITE_ORIGIN;
 if (typeof window !== 'undefined') {
@@ -58,19 +59,9 @@ onMount(async () => {
 })
 </script>
 
-<Header {homepage}/>
-<Homepage {homepage}/>
+<Header/>
+<Homepage/>
 <Footer />
 
 <style>
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    width: 100%;
-    max-width: 1024px;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
 </style>

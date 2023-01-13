@@ -143,14 +143,6 @@ section {
   line-height: 4.0rem;
   text-shadow: 5px 5px 30px rgb(40, 39, 36);
 }
-.content p {
-  font-size: 1.6rem;
-  letter-spacing: 0.1rem;
-  font-weight: 700;
-  line-height: auto;
-  color: #ededed;
-  text-shadow: 5px 5px 30px rgb(40, 39, 36);
-}
 @media screen and (min-width: 0px) and (max-width: 940px) {
   .content { 
     top: 0%;
@@ -160,10 +152,5 @@ section {
     line-height: 4.0rem;
     text-shadow: 5px 5px 30px rgb(40, 39, 36);
   }
-  .content p { 
-    font-size: 1.8rem; 
-    line-height: 2.4rem;
-    text-shadow: 5px 5px 30px rgb(40, 39, 36);
-  }  /* show it on small screens */
 }
 </style>

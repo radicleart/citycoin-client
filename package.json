@@ -1,5 +1,5 @@
 {
-  "name": "citycoins-client",
+  "name": "citycoin-client",
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev --port=8080",
